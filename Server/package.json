@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'No build step needed for plain Node.js'",
+    "build": { "src": "index.js", "use": "@vercel/node" },
     "dev": "nodemon server.js"
   },
   "author": "Smit Patel",
