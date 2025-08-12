@@ -16,7 +16,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="bg-white shadow-md px-6 py-3 flex items-center gap-4">
+        <nav className="bg-white shadow-md px-6 py-3 flex items-center gap-4 sticky top-0 z-50">
             <NavLink to="/" className={linkClasses}>
                 Home
             </NavLink>
