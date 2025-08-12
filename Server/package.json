@@ -4,11 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-<<<<<<< HEAD
-    "build": "echo 'No build step needed for plain Node.js'",
-=======
     "build": "echo 'No build step for plain Node.js'",
->>>>>>> 30b7e7f805d3a92cc3fcea577b721aa57a3b21e1
     "dev": "nodemon server.js"
   },
   "author": "Smit Patel",
