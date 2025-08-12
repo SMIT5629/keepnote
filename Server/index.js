@@ -10,9 +10,13 @@ const connectDB = require('./config/db');
 const app = express();
 dotenv.config();
 app.use(cors({
-    origin: 'http://localhost:5173', // or your frontend URL
+    origin: 'https://keepnote-client.onrender.com', // or your frontend URL
     credentials: true
 }));
+<<<<<<< HEAD
+=======
+app.options('*', cors());
+>>>>>>> 30b7e7f805d3a92cc3fcea577b721aa57a3b21e1
 
 app.use(express.json());
 connectDB();
