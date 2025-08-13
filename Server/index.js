@@ -21,11 +21,11 @@ app.options('*', cors());
 console.log('ENV:', process.env);
 
 app.use(express.json());
-// connectDB();
+connectDB();
 
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
-// app.use('/api/notes', noteRoutes);
+app.use('/api/notes', noteRoutes);
 
 app.get('/', (req, res) => {
     res.send('Welcome to KEEPnote API');
