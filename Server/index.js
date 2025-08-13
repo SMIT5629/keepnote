@@ -18,6 +18,7 @@ app.use(cors({
 }));
 
 app.options('*', cors());
+console.log('ENV:', process.env);
 
 app.use(express.json());
 connectDB();
