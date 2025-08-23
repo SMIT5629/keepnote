@@ -6,7 +6,7 @@ const GetNotes = async (req, res) => {
         res.status(200).json(notes);
     } catch (error) {
         console.error('GetNotes error:', error);
-        res.status(500).json({ message: 'Server error while fetching notes' });
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -23,7 +23,7 @@ const CreateNote = async (req, res) => {
         res.status(201).json(note);
     } catch (error) {
         console.error('CreateNote error:', error);
-        res.status(500).json({ message: 'Server error while creating note' });
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -43,8 +43,8 @@ const updateNote = async (req, res) => {
         await note.save();
         res.status(200).json({ message: 'Note updated', note });
     } catch (error) {
-        console.error('Update Note error:', error);
-        res.status(500).json({ message: 'Server error while updating note' });
+        console.error('Update error:', error);
+        res.status(500).json({ message: 'Server error' });
     }
 };
 
@@ -58,8 +58,8 @@ const deleteNote = async (req, res) => {
         }
         res.status(200).json({ message: 'Note deleted' });
     } catch (error) {
-        console.error('Delete Note error:', error);
-        res.status(500).json({ message: 'Server error while deleting note' });
+        console.error('Delete error:', error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
