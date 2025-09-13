@@ -11,11 +11,8 @@ const app = express();
 dotenv.config();
 // app.use(cors());
 app.use(cors({
-    origin: 'http://localhost:5173', 
-    credentials: true
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+  origin: 'https://keepnote-client.onrender.com', // frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
 app.options('*', cors());
