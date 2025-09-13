@@ -5,21 +5,16 @@ const path = require('path');
 
 const authRoutes = require('./routes/authRoutes');
 const noteRoutes = require('./routes/noteRoutes');
-const connectDB = require('./config/db');
+// const connectDB = require('./config/db');
 
 const app = express();
 dotenv.config();
 app.use(cors({
-    origin: 'https://keepnote-client.onrender.com', // or your frontend URL
+    origin: 'http://localhost:5173', // or your frontend URL
     credentials: true
 }));
-<<<<<<< HEAD
-=======
-app.options('*', cors());
->>>>>>> 30b7e7f805d3a92cc3fcea577b721aa57a3b21e1
-
 app.use(express.json());
-connectDB();
+// connectDB();
 
 app.use('/api/auth', authRoutes);
 
