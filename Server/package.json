@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node server.js",
     "build": "echo 'No build step needed for plain Node.js'",
+=======
+    "start": "node index.js",
+    "build": "echo 'No build step for plain Node.js'",
+>>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
     "dev": "nodemon server.js"
   },
   "author": "Smit Patel",

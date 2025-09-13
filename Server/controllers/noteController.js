@@ -12,8 +12,13 @@ const GetNotes = async (req, res) => {
 
         res.status(200).json(notes);
     } catch (error) {
+<<<<<<< HEAD
         console.error("GetNotes error:", error);
         res.status(500).json({ message: "Server error while fetching notes" });
+=======
+        console.error('GetNotes error:', error);
+        res.status(500).json({ message: 'Server error' });
+>>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
     }
 };
 
@@ -32,8 +37,13 @@ const CreateNote = async (req, res) => {
 
         res.status(201).json(note);
     } catch (error) {
+<<<<<<< HEAD
         console.error("CreateNote error:", error);
         res.status(500).json({ message: "Server error while creating note" });
+=======
+        console.error('CreateNote error:', error);
+        res.status(500).json({ message: 'Server error' });
+>>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
     }
 };
 
@@ -65,8 +75,13 @@ const updateNote = async (req, res) => {
 
         res.status(200).json({ message: "Note updated", note: updatedNote });
     } catch (error) {
+<<<<<<< HEAD
         console.error("Update Note error:", error);
         res.status(500).json({ message: "Server error while updating note" });
+=======
+        console.error('Update error:', error);
+        res.status(500).json({ message: 'Server error' });
+>>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
     }
 };
 
@@ -75,12 +90,25 @@ const deleteNote = async (req, res) => {
     const { id } = req.params;
 
     try {
+<<<<<<< HEAD
         const note = await prisma.note.findFirst({
             where: {
                 id: Number(id),
                 userId: req.user.id
             }
         });
+=======
+        const note = await Note.findOneAndDelete({ _id: id, user: req.user.id });
+        if (!note) {
+            return res.status(404).json({ message: 'Note not found' });
+        }
+        res.status(200).json({ message: 'Note deleted' });
+    } catch (error) {
+        console.error('Delete error:', error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+>>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
 
         if (!note) {
             return res.status(404).json({ message: "Note not found" });
