@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RfaWQiOjEsInNlY3VyZV9rZXkiOiJza19VV2x5MF9yQW5fUHhFZ3ptQlk3NXoiLCJhcGlfa2V5IjoiMDFLNEREQ1lFWTdWRUI4NTdXMTc5OEdFRFAiLCJ0ZW5hbnRfaWQiOiJiNTdlZmM1MWY4NTI4NjJjMzFmMjY2YzFmYjE5NzRmMDYwZDM4NTE5OTkzMGEyNTBlMjY5ZTM4NjBhZmMwNzJkIiwiaW50ZXJuYWxfc2VjcmV0IjoiOTNjNzk2ZmEtNThmNC00YTQxLWE3MjUtMzhhMmExZWY1NWFkIn0.wF1QYGKutnDcwTzE1btuGMVynacxXZcsoHTgJaVTAu4
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: keepnote
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
