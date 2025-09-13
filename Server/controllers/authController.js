@@ -14,11 +14,8 @@ const Register = async (req, res) => {
         });
 
         if (user) {
-<<<<<<< HEAD
             return res.status(400).json({ message: "User already exists" });
-=======
             return res.status(400).json({ message: 'user already exists' });
->>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -38,11 +35,8 @@ const Register = async (req, res) => {
         );
 
         res.status(201).json({
-<<<<<<< HEAD
             message: "User registered successfully",
-=======
             message: 'user registered successfully',
->>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
             token,
             user: {
                 id: user.id,
@@ -51,21 +45,18 @@ const Register = async (req, res) => {
             }
         });
     } catch (error) {
-<<<<<<< HEAD
         console.error("Register error:", error);
         res.status(500).json({ message: "Server error during registration" });
     }
 };
 
 //Login
-=======
         console.error('register error:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
 
 //login user
->>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
 const Login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -75,11 +66,8 @@ const Login = async (req, res) => {
         });
 
         if (!user) {
-<<<<<<< HEAD
             return res.status(404).json({ message: "User not found" });
-=======
             return res.status(404).json({ message: 'user not found' });
->>>>>>> 5982ca971e45a63ebc7d47a2b8c59e1ef4ea2ceb
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
